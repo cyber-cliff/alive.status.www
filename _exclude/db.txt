@@ -1,0 +1,31 @@
+create table alive_company (
+  company_id int(5) auto_increment,
+  company_name varchar(50),
+  company_contact varchar(50),
+  company_email varchar(50),
+  company_desc varchar(200),
+  primary key(company_id)
+);
+
+create table alive_server (
+  server_id int(5) auto_increment,
+  company_id int(5),
+  server_name varchar(50),
+  server_desc varchar(200),
+  server_ip varchar(15),
+  primary key(server_id)
+);
+
+create table alive_service (
+  service_id int(5) auto_increment,
+  service_name varchar(50),
+  service_port int(5),
+  service_desc varchar(200),
+  primary key(service_id)
+);
+
+create table alive_services (
+  server_id int(5),
+  service_id int(5),
+  services_desc varchar(200)
+);
